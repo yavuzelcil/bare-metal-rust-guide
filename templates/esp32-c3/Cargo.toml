@@ -1,0 +1,20 @@
+[package]
+name = "esp32c3-project"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# esp32c3 = "0.23"
+# esp-hal = "0.16"
+# esp-backtrace = "0.11"
+# esp-println = "0.9"
+# riscv = "0.11"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
+
+[profile.dev]
+opt-level = "z"  # ESP32-C3 requires optimization even in dev mode

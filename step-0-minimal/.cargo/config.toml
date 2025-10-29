@@ -1,0 +1,9 @@
+[build]
+target = "thumbv7em-none-eabihf"
+
+[target.thumbv7em-none-eabihf]
+runner = "probe-rs run --chip STM32F439ZI"
+rustflags = [
+  "-C", "link-arg=-Tmemory.x",
+  "-C", "link-arg=--gc-sections",
+]

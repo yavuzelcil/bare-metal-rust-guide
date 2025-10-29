@@ -1,0 +1,10 @@
+[build]
+target = "thumbv6m-none-eabi"
+
+[target.thumbv6m-none-eabi]
+runner = "probe-rs run --chip RP2040"
+rustflags = [
+  "-C", "link-arg=-Tmemory.x",
+  "-C", "link-arg=--gc-sections",
+  "-C", "link-arg=--build-id=none"
+]

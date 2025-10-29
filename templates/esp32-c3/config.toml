@@ -1,0 +1,15 @@
+[build]
+target = "riscv32imc-unknown-none-elf"
+
+[target.riscv32imc-unknown-none-elf]
+runner = "espflash flash --monitor"
+# veya probe-rs:
+# runner = "probe-rs run --chip esp32c3"
+
+rustflags = [
+  "-C", "link-arg=-Tmemory.x",
+  "-C", "link-arg=--gc-sections",
+]
+
+[env]
+ESP_IDF_VERSION = "v5.1"

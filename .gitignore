@@ -1,0 +1,33 @@
+# Rust build artifacts
+**/target/
+**/Cargo.lock
+**/*.rs.bk
+*.pdb
+
+# Build outputs
+*.o
+*.elf
+*.bin
+*.hex
+*.map
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Debug
+debug/
+*.dSYM/
+
+# Backup files
+*.backup
+*.bak
+**/.cargo/config.toml.backup
+
+# Temporary
+tmp/
+temp/
