@@ -1,0 +1,44 @@
+MEMORY
+{
+  FLASH : ORIGIN = 0x08000000, LENGTH = 2048K
+  RAM   : ORIGIN = 0x20000000, LENGTH = 192K
+}
+
+_estack = ORIGIN(RAM) + LENGTH(RAM);
+
+SECTIONS
+{
+  .vector_table ORIGIN(FLASH) :
+  {
+    LONG(_estack);
+    LONG(Reset_Handler);
+  } > FLASH
+
+  .text :
+  {
+    *(.text*)
+    *(.rodata*)
+  } > FLASH
+
+  .data : AT(ADDR(.text) + SIZEOF(.text))
+  {
+    _sdata = .;
+    *(.data*)
+    _edata = .;
+  } > RAM
+
+  .bss :
+  {
+    _sbss = .;
+    *(.bss*)
+    *(.sbss*)
+    . = ALIGN(4);
+    _ebss = .;
+  } > RAM
+
+  /DISCARD/ :
+  {
+    *(.ARM.exidx*)
+    *(.ARM.extab*)
+  }
+}

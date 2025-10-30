@@ -1,0 +1,13 @@
+[package]
+name = "bare-metal-rust-step6-webserver"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+smoltcp = { version = "0.11", default-features = false, features = ["proto-ipv4", "socket-tcp", "medium-ethernet"] }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "z"
+panic = "abort"
