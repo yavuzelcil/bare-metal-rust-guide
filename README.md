@@ -13,8 +13,8 @@ Bu repo, bare-metal (işletim sistemi olmadan) Rust programlama için adım adı
 | [step-2-systick](./step-2-systick/) | **SysTick Timer** | ARM Cortex-M SysTick timer, interrupt handler, hassas zamanlama |
 | [step-3-uart](./step-3-uart/) | **UART Serial** | UART yapılandırması, seri port iletişimi, echo programı |
 | [step-4-printf](./step-4-printf/) | **Printf** | Formatlı çıktı, `core::fmt` trait'leri, debug altyapısı |
-| [step-5-littlefs](./step-5-littlefs/) | **LittleFS** | Embedded dosya sistemi, flash üzerinde dosya işlemleri |
-| [step-6-webserver](./step-6-webserver/) | **Web Server** | TCP/IP stack, HTTP server, REST API, web arayüzü |
+| [step-5-storage](./step-5-storage/) | **Key-Value Storage** | Flash emulation, key-value storage, set/get/delete operasyonları |
+| [step-6-webserver](./step-6-webserver/) | **Web Server** | HTTP server, LED kontrolü, web UI, REST API |
 
 ### Platform Şablonları (Templates)
 
@@ -165,8 +165,8 @@ bare-metal-rust/
 ├── step-2-systick/            # Timer ve interrupt
 ├── step-3-uart/               # Serial iletişim
 ├── step-4-printf/             # Formatlı çıktı
-├── step-5-littlefs/           # Dosya sistemi
-├── step-6-webserver/          # Network ve web server
+├── step-5-storage/            # Key-value storage
+├── step-6-webserver/          # HTTP server ve web UI
 └── templates/                 # Platform şablonları
     ├── stm32f429zi/
     ├── rp2040/
